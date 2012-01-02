@@ -32,6 +32,10 @@ public class Facade {
         return CredentialManager.getCredentialManager().editCredential(credential);
     }
     
+    public Credential findCredentialById(int id) {
+        return CredentialManager.getCredentialManager().findCredentialById(id);
+    }
+    
     public List<Credential> getAllCredential() {
         return CredentialManager.getCredentialManager().getAllCredential();
     }

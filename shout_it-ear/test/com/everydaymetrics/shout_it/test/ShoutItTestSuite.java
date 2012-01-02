@@ -13,7 +13,7 @@ import org.junit.runners.Suite;
 
 /**
  *
- * @author jalburquerque
+ * @author Yamil
  */
 @RunWith(Suite.class)
 @Suite.SuiteClasses({})
