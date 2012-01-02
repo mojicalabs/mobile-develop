@@ -30,5 +30,10 @@ public class shout_it_sb implements shout_it_sbRemote {
     public List<Credential> getAllCredential() {
        return Facade.getFacadeInstance().getAllCredential();
     }
+
+    @Override
+    public Credential findCredentialById(int id) {
+        return Facade.getFacadeInstance().findCredentialById(id);
+    }
     
 }

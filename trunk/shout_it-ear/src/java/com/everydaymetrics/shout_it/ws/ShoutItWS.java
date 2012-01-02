@@ -14,7 +14,7 @@ import javax.jws.WebService;
 
 /**
  *
- * @author jalburquerque
+ * @author Yamil
  */
 @WebService(serviceName = "ShoutItWS")
 public class ShoutItWS {
@@ -23,15 +23,18 @@ public class ShoutItWS {
     // "Insert Code > Add Web Service Operation")
 
     @WebMethod(operationName = "createCredential")
-    public int createCredential(@WebParam(name = "credential")
-    Credential credential) {
+    public int createCredential(@WebParam(name = "credential") Credential credential) {
         return ejbRef.createCredential(credential);
     }
 
     @WebMethod(operationName = "editCredential")
-    public boolean editCredential(@WebParam(name = "credential")
-    Credential credential) {
+    public boolean editCredential(@WebParam(name = "credential") Credential credential) {
         return ejbRef.editCredential(credential);
+    }
+
+    @WebMethod(operationName = "findCredentialById")
+    public Credential findCredentialById(@WebParam(name = "id") int id) {
+        return ejbRef.findCredentialById(id);
     }
 
     @WebMethod(operationName = "getAllCredential")

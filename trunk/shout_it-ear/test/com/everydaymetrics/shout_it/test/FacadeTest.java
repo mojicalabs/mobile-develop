@@ -4,11 +4,8 @@
  */
 package com.everydaymetrics.shout_it.test;
 
-import com.sun.xml.internal.bind.v2.TODO;
 import org.junit.Ignore;
 import com.everydaymetrics.shout_it.entities.Credential;
-import java.util.List;
-import java.util.ArrayList;
 import com.everydaymetrics.shout_it.facade.Facade;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -19,7 +16,7 @@ import static org.junit.Assert.*;
 
 /**
  *
- * @author jalburquerque
+ * @author Yamil
  */
 public class FacadeTest {
     
@@ -44,34 +41,28 @@ public class FacadeTest {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Ignore
+    @Ignore
      public void createCredential() {
-         Credential credential = new Credential();
-         credential.setName("Yamil Alburquerque");
-         credential.setUsername("yamilan");
-         credential.setPassword("pass1234");
-         credential.setEmail("yamil.alburquerque@gmail.com");
-         credential.setAvatar("/avatars/yamilan.jpg");
-         credential.setPhrase("frase de prueba");   
-         Facade.getFacadeInstance().createCredential(credential);
-     }
-     
-     //Buscar ejemplo de cambio_funcionarios del edit e implementar.
-     @Test
-     public void editCredential(){
-         Credential credential = new Credential();
-         credential.setId(1);
-         credential.setName("José Alburquerque");
-         Facade.getFacadeInstance().editCredential(credential);
-     }
-     
-     @Ignore
-     public void getAllCredential() {
-         List<Credential> credentialList = new ArrayList();
-         credentialList = Facade.getFacadeInstance().getAllCredential();
-         for (int i = 0 ; i < credentialList.size() ; i++)
-         {
-         System.out.println("List of credentials by name: " + credentialList.get(i).getName());
-         }
-     }
+        Credential credential = new Credential();
+        credential.setName("Yamil Alburquerque");
+        credential.setUsername("yamilan");
+        credential.setPassword("pass1234");
+        Facade.getFacadeInstance().createCredential(credential);
+    }
+    
+    @Ignore
+    public void findCredentialById(){
+        Credential credential = new Credential();
+        credential = Facade.getFacadeInstance().findCredentialById(1);
+        System.out.println("The #1 credential is for user " + credential.getName());
+    }   
+    
+    @Test
+    public void editCredential(){
+        Credential credential = new Credential();
+        credential = Facade.getFacadeInstance().findCredentialById(1);
+        credential.setName("José Alburquerque");
+        Facade.getFacadeInstance().editCredential(credential);
+        
+    }
 }
