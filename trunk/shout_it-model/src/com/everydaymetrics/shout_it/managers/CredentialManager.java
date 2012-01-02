@@ -34,6 +34,10 @@ public class CredentialManager {
         return JpaUtils.editEntity(credential);
     }
     
+    public Credential findCredentialById(int id) {
+        return (Credential) JpaUtils.findEntity(new Credential(), id);
+    }
+    
     public List<Credential> getAllCredential() {
         return JpaUtils.findAllEntities(new Credential());
     }

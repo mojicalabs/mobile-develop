@@ -14,9 +14,12 @@ import javax.ejb.Remote;
  */
 @Remote
 public interface shout_it_sbRemote {
-    
+
     public int createCredential(Credential credential);
+
     public boolean editCredential(Credential credential);
+
+    public Credential findCredentialById(int id);
+
     public List<Credential> getAllCredential();
-    
 }
